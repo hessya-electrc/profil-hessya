@@ -1,54 +1,182 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f5f5f5;
-    color: #222222;
-}
-
-header {
-    background-color: #dbeafe;
-    text-align: center;
-    padding: 30px;
-}
-
-main {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
-
-section {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+/* Mengatur semua elemen agar lebih mudah ditata */
+* {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-textarea {
-    min-height: 100px;
+/* Tampilan dasar halaman */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    line-height: 1.6;
 }
 
-button {
+/* Pembungkus agar isi berada di tengah */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Bagian header */
+.header {
+    background-color: #2563eb;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Menu navigasi */
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid #d1d5db;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+}
+
+.nav-menu a {
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-menu a:hover {
+    color: #2563eb;
+}
+
+/* Isi utama */
+main {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Kotak setiap bagian */
+.card {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #2563eb;
+}
+
+/* Bagian profil */
+.profil {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.foto-profil {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #dbeafe;
+}
+
+.profil-teks {
+    flex: 1;
+}
+
+/* Bagian kartu materi */
+.daftar-kartu {
+    display: flex;
+    gap: 20px;
+}
+
+.kartu-kecil {
+    flex: 1;
+    background-color: #eff6ff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #bfdbfe;
+}
+
+.kartu-kecil h3 {
+    margin-top: 0;
+    color: #1d4ed8;
+}
+
+/* Daftar target */
+.target-list {
+    padding-left: 25px;
+}
+
+.target-list li {
+    margin-bottom: 10px;
+}
+
+/* Formulir */
+.teks-keterangan {
+    color: #6b7280;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* Tombol */
+button {
+    width: 100%;
+    padding: 13px;
     background-color: #2563eb;
     color: white;
     border: none;
     border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -56,8 +184,45 @@ button:hover {
     background-color: #1d4ed8;
 }
 
-footer {
-    background-color: #dbeafe;
+/* Footer */
+.footer {
+    background-color: #1f2937;
+    color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+}
+
+/* Mengatur tampilan saat dibuka di HP */
+@media screen and (max-width: 700px) {
+
+    .header {
+        padding: 40px 20px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .profil {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto-profil {
+        width: 180px;
+        height: 180px;
+    }
+
+    .daftar-kartu {
+        flex-direction: column;
+    }
+
+    .card {
+        padding: 20px;
+    }
 }
